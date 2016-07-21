@@ -1,0 +1,1 @@
+install.packages(c("Rcpp", "RJSONIO", "digest", "functional", "reshape2", "stringr", "plyr", "caTools", "reshape2", "dplyr", "Hmisc", "stats", "memoise", "lazyeval", "rjson", "R.methodsS3", "rJava", "bit64"), repos='http://cran.us.r-project.org')
