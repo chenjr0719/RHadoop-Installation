@@ -14,15 +14,16 @@ It contains 4 different packages to combine different project from **Hadoop** an
 * ravro: Combine Hadoop's **Avro** with **R**.
 * plyrmr: Provides a familiar **plyr-like** interface with **MapReduce**.
 
-You can reference the offical GitHub of **RHadoop**: https://github.com/RevolutionAnalytics/RHadoop
+You can reference the official GitHub of **RHadoop**: https://github.com/RevolutionAnalytics/RHadoop
 
 ## Requirements
 
 First at all, you need a **Hadoop Cluster**.
 
-I suggest use **Apache Ambari** to deploy your own **Hadoop**.
+I suggest using **Apache Ambari** to deploy your own **Hadoop**.
 
 You can reference my article to get more instruction of use **Apache Ambari** to deploy **Hadoop Cluster**.
+
 **Link:** http://chenjr-jacob.idv.tw/2016/07/04/apache-ambari-deploy-manage-monitor-hadoop-cluster-easier/
 
 This Script only work on **CentOS**, make sure your **Hadoop Cluster** is based on **CentOS**.
@@ -37,11 +38,13 @@ This Script only work on **CentOS**, make sure your **Hadoop Cluster** is based 
 
 ## How to use?
 
+You have to run this script on every node in your cluster.
+
 ```$
 sudo sh RHadoop_Installation.sh
 ```
 
-After the installation, you can use another script to test **RHadoop**.
+After the installation, you can use another script to test **RHadoop** at any node.
 
 ```$
 Rscript RHadoop_Wordcount_Test.R
@@ -56,3 +59,11 @@ sudo su hdfs
 hadoop fs -mkdir /user/$USER_NAME
 hadoop fs -chown $USER_NAME:hdfs /user/$USER_NAME
 ```
+
+The result of **Wordcount Test** should look like this:
+
+![alt tag](http://chenjr-jacob.idv.tw/wp-content/uploads/2016/07/Screenshot-from-2016-07-21-23-42-00.png)
+
+You can also ckeck **YARN ResourceManager UI** when the test is running.
+
+![alt tag](http://chenjr-jacob.idv.tw/wp-content/uploads/2016/07/Screenshot-from-2016-07-21-23-43-45.png)
